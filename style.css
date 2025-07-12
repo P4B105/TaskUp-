@@ -1,0 +1,405 @@
+:root {
+    /* Nueva Paleta de Colores Profesional (5 colores) */
+    --color-bg-light: #e6e6e6;          /* Fondo principal claro, texto claro en fondos oscuros */
+    --color-bg-dark: #011627;           /* Fondo secundario oscuro, texto oscuro en fondos claros */
+    --color-primary-accent: #2ec4b6;    /* Acento principal (éxito, botones primarios, títulos de ítems) */
+    --color-secondary-accent: #ff9f1c;  /* Acento secundario (resalte, títulos de página/sección, en proceso) */
+    --color-danger: #e71d36;            /* Color de peligro (alertas, eliminar) */
+}
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Fuente profesional */
+    background: var(--color-bg-light); /* Fondo principal claro */
+    min-height: 100vh;
+    color: var(--color-bg-dark); /* Texto oscuro por defecto en fondos claros */
+    line-height: 1.6;
+}
+
+/*--------------------ENCABEZADO (NAV-BAR GENERAL)--------------------*/
+
+.encabezado-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-dark); /* Fondo oscuro para el encabezado */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.encabezado-div-logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.encabezado-img-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.encabezado-img-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 8px rgba(105, 201, 191, 0.507));
+}
+
+.encabezado-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.encabezado-li {
+    display: inline-block;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.encabezado-li:hover {
+    transform: translateY(-3px);
+}
+
+.encabezado-a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-bg-light); /* Texto claro en el encabezado oscuro */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.encabezado-a:hover {
+    color: var(--color-primary-accent); /* Verde azulado al pasar el ratón */
+    text-shadow: 0 0 8px var(--color-primary-accent);
+}
+
+.encabezado-button {
+    margin-left: 20px;
+    font-weight: 700;
+    color: var(--color-bg-light); /* Texto claro en el botón */
+    padding: 10px 28px;
+    background: var(--color-primary-accent); /* Verde azulado para el botón del encabezado */
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.encabezado-button:hover {
+    background-color: #26A69A; /* Tono más oscuro de verde azulado al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*----------------------------------------------------INDEX.PHP----------------------------------------------------*/
+.index-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+    box-sizing: border-box;
+    background: var(--color-bg-light); /* Fondo principal claro */
+}
+
+.index-div-formulario {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--color-bg-dark); /* Fondo claro para el formulario */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave para fondo claro */
+    margin-top: 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil para fondo claro */
+}
+
+.index-form-formulario {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.index-h1 {
+    font-size: 2.2rem;
+    color: var(--color-primary-accent); /* Texto oscuro para el título */
+    border-bottom: 2px solid var(--color-primary-accent); /* Verde azulado para el borde del título */
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+.index-div-usuario, .index-div-contraseña {
+    position: relative;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.index-input-usuario,
+.index-input-contraseña {
+    width: 100%;
+    padding: 10px 0;
+    margin: 4px 0;
+    height: auto;
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 2px solid var(--color-bg-light); /* Borde oscuro para input */
+    background: transparent;
+    outline: none;
+    color: var(--color-bg-light); /* Texto oscuro en input */
+    transition: all 0.3s ease;
+}
+
+.index-input-usuario:focus,
+.index-input-contraseña:focus,
+.index-input-usuario:valid,
+.index-input-contraseña:valid {
+    border-bottom-color: var(--color-primary-accent); /* Verde azulado al enfocar/validar */
+}
+
+.index-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: var(--color-bg-light); /* Texto oscuro para la etiqueta */
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.index-input-usuario:focus ~ label,
+.index-input-contraseña:focus ~ label,
+.index-input-usuario:valid ~ label,
+.index-input-contraseña:valid ~ label {
+    top: -20px;
+    font-size: 0.9rem;
+    color: var(--color-primary-accent); /* Verde azulado para la etiqueta al enfocar */
+    text-shadow: none;
+}
+
+.index-input-submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: var(--color-primary-accent); /* Verde azulado para el botón de inicio de sesión */
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-bg-light); /* Texto claro en el botón */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.index-input-submit:hover {
+    background-color: #26A69A; /* Tono más oscuro de verde azulado al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.index-input-submit:focus {
+    box-shadow: 0 0 15px var(--color-primary-accent); /* Sombra verde azulado al enfocar */
+    outline: none;
+}
+
+.index-p {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: var(--color-bg-dark); /* Texto oscuro para el párrafo */
+    text-align: center;
+}
+
+.index-a {
+    text-decoration: none;
+    color: var(--color-secondary-accent); /* Naranja para el enlace */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.index-a:hover {
+    text-shadow: 0 0 8px var(--color-secondary-accent);
+    color: #FFB300; /* Tono más claro de naranja al pasar el ratón */
+}
+
+/*----------------------------------------------------REGISTRO.PHP----------------------------------------------------*/
+
+.registro-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+    box-sizing: border-box;
+    background: var(--color-bg-light); /* Fondo principal claro */
+}
+
+.registro-div-formulario{
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 0;
+    background-color: var(--color-bg-dark); /* Fondo oscuro para el formulario */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave para fondo oscuro */
+    margin-top: 0;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil para fondo oscuro */
+}
+
+.registro-div-formulario form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.registro-div-formulario h1 {
+    font-size: 2.2rem;
+    color: var(--color-primary-accent); /* Texto oscuro para el título */
+    border-bottom: 2px solid var(--color-primary-accent); /* Verde azulado para el borde del título */
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+/* Estilos para los contenedores de input */
+.registro-div-nombre,
+.registro-div-apellido,
+.registro-div-alias,
+.registro-div-contraseña,
+.registro-div-confirmar-contraseña {
+    position: relative;
+    width: 100%;
+    padding-bottom: 4px;
+}
+
+/* Estilos para los campos de entrada usando sus clases específicas */
+.registro-input-nombre,
+.registro-input-apellido,
+.registro-input-alias,
+.registro-input-contraseña,
+.registro-input-confirmar-contraseña {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    height: auto;
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 2px solid var(--color-bg-light); /* Borde oscuro para input */
+    background: transparent;
+    outline: none;
+    color: var(--color-bg-light); /* Texto oscuro en input */
+    transition: all 0.3s ease;
+}
+
+/* Estado de foco y validación para los inputs usando sus clases específicas */
+.registro-input-nombre:focus,
+.registro-input-apellido:focus,
+.registro-input-alias:focus,
+.registro-input-contraseña:focus,
+.registro-input-confirmar-contraseña:focus,
+.registro-input-nombre:valid,
+.registro-input-apellido:valid,
+.registro-input-alias:valid,
+.registro-input-contraseña:valid,
+.registro-input-confirmar-contraseña:valid {
+    border-bottom-color: var(--color-primary-accent); /* Verde azulado al enfocar/validar */
+}
+
+/* Estilos para las etiquetas flotantes (todas comparten la clase .registro-label) */
+.registro-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: var(--color-bg-light); /* Texto oscuro para la etiqueta */
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Movimiento de la etiqueta al enfocar o validar el input */
+.registro-input-nombre:focus ~ label,
+.registro-input-apellido:focus ~ label,
+.registro-input-alias:focus ~ label,
+.registro-input-contraseña:focus ~ label,
+.registro-input-confirmar-contraseña:focus ~ label,
+.registro-input-nombre:valid ~ label,
+.registro-input-apellido:valid ~ label,
+.registro-input-alias:valid ~ label,
+.registro-input-contraseña:valid ~ label,
+.registro-input-confirmar-contraseña:valid ~ label {
+    top: -20px;
+    font-size: 0.9rem;
+    color: var(--color-primary-accent); /* Verde azulado para la etiqueta al enfocar */
+}
+
+/* Estilos para el botón de enviar (input type="submit") */
+.registro-div-formulario input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: var(--color-primary-accent); /* Verde azulado para el botón de registro */
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-bg-light); /* Texto claro en el botón */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.registro-div-formulario input[type="submit"]:hover {
+    background-color: #26A69A; /* Tono más oscuro de verde azulado al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.registro-div-formulario input[type="submit"]:focus {
+    box-shadow: 0 0 15px var(--color-primary-accent); /* Sombra verde azulado al enfocar */
+    outline: none;
+}
+
+/* Estilos para el párrafo "¿Ya te registraste?" */
+.registro-p {
+    font-size: 1rem;
+    margin-top: 0px;
+    margin-bottom: 0;
+    color: var(--color-bg-dark); /* Texto oscuro para el párrafo */
+    text-align: center;
+}
+
+.registro-p .registro-a {
+    text-decoration: none;
+    color: var(--color-secondary-accent); /* Naranja para el enlace */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.registro-p .registro-a:hover {
+    text-shadow: 0 0 8px var(--color-secondary-accent);
+    color: #FFB300; /* Tono más claro de naranja al pasar el ratón */
+}
+
+/*----------------------------------------------------HOME.PHP (y otras páginas con contenido principal)----------------------------------------------------*/
