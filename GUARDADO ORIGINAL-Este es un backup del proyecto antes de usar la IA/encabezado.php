@@ -19,7 +19,7 @@
                 if(isset($_SESSION['nombre_usuario'])){
                     echo '
                         <div class="encabezado-div-logo">
-                            <a href="home.php"><img src="Imagenes/logo.png" alt="Logo de empresa" class="encabezado-img-logo"></a>
+                            <a href="dashboard.php"><img src="Imagenes/logo.png" alt="Logo de empresa" class="encabezado-img-logo"></a>
                         </div>
                         <nav>
                             <ul class="encabezado-ul">

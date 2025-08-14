@@ -75,12 +75,8 @@
         <p class="dashboard-p-alias">Tu alias: <?php echo htmlspecialchars($nombre_usuario); ?></p>
         
         <div class="dashboard-section balance-section">
-            <p class="dashboard-balance-amount">
-                <h1 class="home-h1">Monedas</h1> 
-                <span class="balance-value"><?php echo htmlspecialchars($balance_total); ?>
-                <img src="imagenes/moneda.png" alt="monedas.png" class="home-imagen-moneda">
-            </span> 
-            </p>
+            <h2 class="dashboard-h2">Tu Balance Actual</h2>
+            <p class="dashboard-balance-amount">Monedas: <span class="balance-value"><?php echo htmlspecialchars($balance_total); ?></span></p>
             <button class="dashboard-button" onclick="location.href='shop.php'">Ir a la Tienda</button>
         </div>
 
@@ -100,7 +96,7 @@
                         </li>
                     <?php endforeach; ?>
                 </ul>
-                <button class="dashboard-button" onclick="location.href='actividades.php'">Ver Actividades</button>
+                <button class="dashboard-button" onclick="location.href='actividades.php'">Ver todas las Actividades</button>
             <?php endif; ?>
         </div>
 
